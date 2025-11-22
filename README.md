@@ -1,20 +1,55 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# HyperTap Blitz ⚡
 
-# Run and deploy your AI Studio app
+**HyperTap Blitz** is a fast-paced, neon-styled reflex game built with React, Tailwind CSS, and Capacitor for Android.
 
-This contains everything you need to run your app locally.
+## 🎮 Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1bLBDtCxugeZl0kKzW2OQJHom-5xEcyFL
+- **Fast-Paced Action:** Test your reflexes against shrinking targets.
+- **Neon Visuals:** Stunning glowing graphics and dynamic effects.
+- **Multiple Target Types:**
+  - 🔵 **Normal:** Tap to score.
+  - 💣 **Bomb:** Avoid at all costs!
+  - ❄️ **Freeze:** Slow down time.
+  - ☢️ **Nuke:** Clear the screen.
+  - 💖 **Heart:** Gain an extra life.
+  - 💎 **Jackpot:** Big points!
+- **Combo System:** Chain hits for massive multipliers.
+- **Revive System:** Watch a quick ad to continue your run.
+- **Double Stars:** Multiply your earnings to unlock upgrades.
 
-## Run Locally
+## 🛠️ Tech Stack
 
-**Prerequisites:**  Node.js
+- **Framework:** React (Vite)
+- **Styling:** Tailwind CSS v4
+- **Mobile Runtime:** Capacitor (Android)
+- **Monetization:** AdMob (Rewarded & Interstitial)
+- **Icons:** Lucide React
 
+## 🚀 Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. **Install Dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+2. **Run Locally:**
+
+    ```bash
+    npm run dev
+    ```
+
+3. **Build for Android:**
+
+    ```bash
+    npm run build
+    npx cap sync
+    npx cap open android
+    ```
+
+## 📱 Privacy Policy
+
+Privacy Policy is available [here](privacy_policy_export/index.html).
+
+---
+Developed by **MTGSoftWorks**

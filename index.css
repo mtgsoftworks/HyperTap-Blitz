@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import "tailwindcss";
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+}
+
+/* --- NEON ORBS & RINGS (Optimized Shadows) --- */
+
+.neon-glow {
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    will-change: transform, opacity, box-shadow;
+}
+
+.inset-glow {
+    box-shadow: inset 0 0 15px currentColor;
+}
+
+/* Custom Animation for shrinking targets */
+@keyframes shrink {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    10% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+/* Exploding particles */
+@keyframes particle {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(var(--tx), var(--ty), 0) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Screen shake on miss */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    20% {
+        transform: translate3d(-5px, 5px, 0);
+    }
+
+    40% {
+        transform: translate3d(5px, -5px, 0);
+    }
+
+    60% {
+        transform: translate3d(-5px, -5px, 0);
+    }
+
+    80% {
+        transform: translate3d(5px, 5px, 0);
+    }
+}
+
+/* Floating text animation */
+@keyframes floatUp {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(0, -50px, 0) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Drifting animation for moving targets */
+@keyframes drift {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate3d(10px, -10px, 0);
+    }
+
+    50% {
+        transform: translate3d(0, -20px, 0);
+    }
+
+    75% {
+        transform: translate3d(-10px, -10px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Ghost effect for high levels */
+@keyframes ghost {
+
+    0%,
+    100% {
+        opacity: 0.9;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+/* Chromatic Aberration / Glitch Effect */
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+    }
+
+    25% {
+        text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff;
+    }
+
+    50% {
+        text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+    }
+
+    75% {
+        text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff;
+    }
+
+    100% {
+        text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+    }
+}
+
+@keyframes shiny {
+    100% {
+        left: 125%;
+    }
+}
+
+.animate-shrink {
+    animation-name: shrink;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    will-change: transform, opacity;
+}
+
+.animate-particle {
+    animation: particle 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    will-change: transform, opacity;
+}
+
+.animate-shake {
+    animation: shake 0.3s ease-in-out;
+    will-change: transform;
+}
+
+.animate-float {
+    animation: floatUp 0.8s ease-out forwards;
+    will-change: transform, opacity;
+}
+
+.animate-drift {
+    animation: drift 3s ease-in-out infinite;
+    will-change: transform;
+}
+
+.animate-ghost {
+    animation: ghost 0.8s ease-in-out infinite;
+}
+
+.animate-shiny {
+    animation: shiny 1.5s ease-in-out infinite;
+}
+
+.glitch-effect {
+    animation: glitch 0.2s infinite;
+}
+
+.animate-pulse-ring {
+    animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* Safe area padding for notched phones */
+.safe-top {
+    padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+}
